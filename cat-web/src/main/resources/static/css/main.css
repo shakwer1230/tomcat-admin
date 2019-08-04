@@ -1,0 +1,12 @@
+.title{
+    text-align: center;
+}
+ .main{
+    background-color: #cac6c6; width: 100%;bottom: 30px; height: 50px;
+}
+ .user{
+    float: left;margin-left: 10%;padding-top: 15px;
+}
+ .date{
+    float: right;margin-right: 10%;padding-top: 15px;
+}

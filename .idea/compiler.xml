@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cat-database" />
         <module name="cat-web" />
         <module name="cat-api" />
         <module name="cat-common" />
-        <module name="cat-service" />
         <module name="cat-model" />
-        <module name="cat-database" />
+        <module name="cat-service" />
       </profile>
     </annotationProcessing>
   </component>

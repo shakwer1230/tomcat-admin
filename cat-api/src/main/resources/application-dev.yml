@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    master:
+      password: 1234
+      url: jdbc:mysql://127.0.0.1:3306/world?useUnicode=true&characterEncoding=UTF-8
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      type: com.zaxxer.hikari.HikariDataSource
+    cluster:
+      key: slave1
+      password: 1234
+      url: jdbc:mysql://127.0.0.1:3306/sakila?useUnicode=true&characterEncoding=UTF-8
+      idle-timeout: 20000
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      type: com.zaxxer.hikari.HikariDataSource

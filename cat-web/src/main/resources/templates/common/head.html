@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head  th:fragment="common_head(title)">
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+    <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
+</head>
+<body>
+    <div th:fragment="common_head_content">
+        <div class="main">
+            <div class="user">用户名：jack</div>
+<!--            <div class="date" id="time" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}">当前时间：2019-07-23 18:00:00</div>-->
+            <div class="date" id="time"></div>
+        </div>
+        <script th:inline="javascript">
+            function setTime(){
+                var dt=new Date();
+                var arr_week=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+                var strWeek=arr_week[dt.getDay()];
+                var strHour=dt.getHours();
+                var strMinutes=dt.getMinutes();
+                var strSeconds=dt.getSeconds();
+                if (strMinutes<10) strMinutes="0"+strMinutes;
+                if (strSeconds<10) strSeconds="0"+strSeconds;
+                var strYear=dt.getFullYear()+"年";
+                var strMonth=(dt.getMonth()+1)+"月";
+                var strDay=dt.getDate()+"日";
+                <!--var strTime=strHour+":"+strMinutes+":"+strSeconds;-->
+                var strTime=strHour+":"+strMinutes+":"+strSeconds;
+                $("#time").text(strYear+strMonth+strDay+" "+strTime+"  "+strWeek);
+            }
+            setInterval("setTime()",1000);
+        </script>
+    </div>
+</body>
+</html>
